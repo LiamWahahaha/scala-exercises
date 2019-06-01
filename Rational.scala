@@ -37,6 +37,11 @@ class Rational(n: Int, d: Int) {
   def div(that: Rational): Rational =
     new Rational(numer * that.denom, denom * that.numer)
 
+  def +(that: Int): Rational = this + new Rational(that)
+  def -(that: Int): Rational = this - new Rational(that)
+  def *(that: Int): Rational = this * new Rational(that)
+  def /(that: Int): Rational = this / new Rational(that)
+
   def lessThan(that: Rational) =
     // can also leave off the this-prefix and write just numer
     this.numer * that.denom < that.numer * this.denom
