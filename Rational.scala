@@ -1,6 +1,9 @@
 class Rational(n: Int, d: Int) {
-  val numer: Int = n
-  val denom: Int = d
+  private def gcd(a: Int, b: Int): Int =
+    if (b == 0) a else gcd(b, a % b)
+  private val g = gcd(n, d)
+  val numer: Int = n / g
+  val denom: Int = d / g
 
   override def toString() = numer + "/" + denom
 
