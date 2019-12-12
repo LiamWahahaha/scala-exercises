@@ -17,6 +17,15 @@ class ChecksumCalculator {
   def checksum: Int = ~(sum & 0xFF) + 1
 }
 
+/** When a singleton object shares the same name with a class,
+ *  it is called that class's companion object.
+ *  The class is called the companion class of the singleton
+ *  object.
+ *  A class and its companion object can access each other's
+ *  private members.
+ *  A singleton object that does not share the same name with
+ *  a companion class is called a standalone object.
+ */
 object ChecksumCalculator {
   def calcChecksum(s: String): Int = {
     val cc = new ChecksumCalculator
